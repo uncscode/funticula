@@ -16,13 +16,13 @@ jobs:
          linter: ["flake8", "pylint", "pytype"]
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v4.2.0
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5.1.0
       with:
-        python-version: "3.10"
-        
+        python-version: "3.11"
+
     - name: Install dependencies
       run: |
         python -m pip install pytest ${{ matrix.linter }}
@@ -39,8 +39,8 @@ jobs:
       if: ${{ matrix.linter == 'pylint' }} 
       name: Lint with pylint
       run: |
-        pylint $(find template/ -name "*.py" | xargs)
-    
+        pylint $(find funticula/ -name "*.py" | xargs)
+
     - 
       if: ${{ matrix.linter == 'pytype' }}
       name: Lint with pytype

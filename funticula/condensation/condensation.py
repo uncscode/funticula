@@ -34,8 +34,6 @@ Topping, D., & Bane, M. (2022). Introduction to Aerosol Modelling
 Units are all Base SI units.
 """
 
-import numpy as np
-
 # Functions
 from funticula.condensation.functions.mass_transport import (
     mass_transfer_rate, first_order_mass_transport_k)
@@ -59,7 +57,7 @@ temperature = 298.15  # K
 pressure = 101325  # Pa
 dynamic_viscosity_ref = 1.8e-5  # Pa*s
 dynamic_viscosity_temp_ref = 273.15  # K
-radius = np.array([1e-8])  # m
+radius = 1e-8  # m
 molar_mass_air = 0.029  # kg/mol
 mass_accommodation_coefficient = 0.1  # unitless
 diffusion_coefficient_of_vapor = 2.0e-5  # m^2/s

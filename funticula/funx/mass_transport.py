@@ -8,7 +8,7 @@ def first_order_mass_transport_k(
 
 
 def mass_transfer_rate(
-        first_order_mass_transport,
+        pi, radius, diffusion_coefficient, vapor_transition, 
         pressure_delta,
         gas_constant,
         temperature,
@@ -18,6 +18,9 @@ def mass_transfer_rate(
     - Aerosol Modeling, eq 2.41 (excluding particle number)
     - Seinfeld and Pandis equation 13.3
     """
+    first_order_mass_transport = first_order_mass_transport_k(
+        pi, radius, diffusion_coefficient, vapor_transition
+    )
     return (
         first_order_mass_transport * pressure_delta /
         (gas_constant / molar_mass * temperature)

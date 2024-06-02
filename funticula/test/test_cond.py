@@ -21,7 +21,7 @@ def test_funticula():
     partial_pressure_gas = 1e-6  # Pa, based on vapor concentration
     partial_pressure_particle = 1e-3  # Pa, based on activity and pure vap pressure
     diffusion_coefficient_of_vapor = 2.0e-5  # m^2/s
-    mcrv = mass_accommodation_rate(
+    mcrv = mass_condensation_rate(
         dynamic_viscosity_ref, temperature, dynamic_viscosity_temp_ref, sutherland_constant,
         air_dynamic_viscosity, pressure, molar_mass_air, pi, gas_constant, radius,
         mass_accommodation_coefficient, effective_surface_tension, molar_mass, effective_density,
